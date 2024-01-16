@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyledFrames } from './styles/Frames,styled'
+import { StyledFrames } from './styles/Frames.styled'
 
 export default function FrameOne() {
   return (
