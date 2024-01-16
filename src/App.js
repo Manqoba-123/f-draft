@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+import GlobalStyles from './components/styles/Global';
+import FrameOne from './components/FrameOne';
+
+const theme = {
+  colors:{
+    body: "#a0a0a0",
+  },
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <>
+        <Router>
+          <GlobalStyles />
+          <Routes>
+            <Route path='/' element={<FrameOne />} />
+          </Routes>
+        </Router>
+      </>
+    </ThemeProvider>
   );
 }
 
